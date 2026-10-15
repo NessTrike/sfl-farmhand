@@ -1,26 +1,175 @@
-<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>SFL Farmhand · Soporte</title><style>
-:root{--bg:#0B0A14;--card:#181425;--text:#ECEAF4;--muted:#A9A3BE;--gold:#FFC53D;--mint:#6CF2B0}
-@media (prefers-color-scheme: light){:root{--bg:#FBF8EF;--card:#FFFFFF;--text:#1B1530;--muted:#5E5873;--gold:#B7791F;--mint:#1F8A5B}}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
-main{max-width:760px;margin:0 auto;padding:40px 18px 64px}h1{color:var(--gold);font-size:30px;margin:0 0 4px}
-.meta{color:var(--muted);font-size:13px;margin-bottom:24px}h2{font-size:18px;margin:28px 0 6px}p{margin:0 0 10px;color:var(--text);opacity:.9;white-space:pre-line}
-nav{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:28px}nav a{color:var(--mint);text-decoration:none;font-weight:600}
-.card{background:var(--card);border-radius:16px;padding:18px 20px;margin:14px 0}footer{margin-top:40px;color:var(--muted);font-size:13px}
-</style></head><body><main><nav><a href="index.html">Inicio</a><a href="privacy.html">Privacidad</a><a href="terms.html">Términos</a><a href="index-en.html">English</a><a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">EULA de Apple</a></nav>
-<h1>SFL Farmhand</h1><div class="meta">Tu ayudante de granja para Sunflower Land</div>
-<p>Temporizadores en vivo de tu granja, rentabilidad en FLOWER, radar de mercado, guías de Marine Marvels, mascotas, comidas para subir de nivel y mucho más.</p>
-<div class="card"><h2>Soporte</h2><p>¿Dudas, errores o sugerencias? Escríbenos a <strong>nesstrikedev@gmail.com</strong>. Respondemos lo antes posible.</p></div>
-<div class="card"><h2>Preguntas frecuentes</h2>
-<p><strong>¿Dónde encuentro mi Farm ID?</strong> Es el número que aparece junto a tu nombre en el juego.</p>
-<p><strong>¿La app necesita mi cartera o contraseña?</strong> No. Solo usa tu Farm ID público; nunca te pedirá claves privadas ni frases de recuperación.</p>
-<p><strong>¿Por qué un dato no coincide con el juego?</strong> Algunos valores son estimaciones y los datos dependen de servicios externos. Desliza hacia abajo para actualizar.</p>
-<p><strong>¿Cómo borro mis datos?</strong> En Ajustes → Legal y privacidad → "Borrar todos los datos de la app", o desinstalando la app. Tus compras no se pierden.</p></div>
-<div class="card"><h2>SFL Farmhand Pro</h2>
-<p><strong>¿Qué incluye?</strong> Movimientos, Radar de mercado, Progreso de Marvels, Comidas para subir de nivel, Rentabilidad de animales, Mascotas, Excavaciones disponibles y Mascota de facción. El resto de la app es gratis.</p>
-<p><strong>¿Cuánto cuesta?</strong> Suscripción trimestral de 1,99 USD cada 3 meses (con 7 días gratis la primera vez) o un solo pago de 9,99 USD, sin renovaciones. La tienda muestra el precio final en tu moneda.</p>
-<p><strong>¿Cómo cancelo la suscripción?</strong> iPhone: Ajustes → tu nombre → Suscripciones. Android: Google Play → Perfil → Pagos y suscripciones. Cancela al menos 24 horas antes del final del periodo (o de la prueba) para que no se renueve.</p>
-<p><strong>¿Cómo pido un reembolso?</strong> Los pagos los gestiona la tienda: en reportaproblem.apple.com (App Store) o en el historial de compras de Google Play.</p>
-<p><strong>Cambié de teléfono, ¿pierdo Pro?</strong> No. Inicia sesión con la misma cuenta de Apple o Google y pulsa "Restaurar compras" en Ajustes → SFL Farmhand Pro.</p></div>
-<h2>App no oficial</h2><p>SFL Farmhand es un proyecto independiente creado por un jugador de la comunidad. No forma parte de Sunflower Land ni está afiliada a sus creadores o patrocinada por ellos. Todas las marcas e imágenes del juego pertenecen a sus respectivos dueños.</p><h2>Datos y cálculos</h2><p>Los tiempos marcados con ≈ y los cálculos de rentabilidad, XP, precios y probabilidades son estimaciones. Pueden variar respecto al juego.</p><h2>Sin asesoramiento financiero</h2><p>Los precios, variaciones y sugerencias del mercado son solo informativos. No son una recomendación de compra, venta ni inversión.</p>
-<footer>SFL Farmhand es un proyecto independiente y no oficial; no forma parte de Sunflower Land ni está afiliado a Sunflower Land.</footer></main></body></html>
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SFL Farmhand · Tu ayudante de granja para Sunflower Land</title>
+<meta name="description" content="Temporizadores en vivo, rentabilidad en FLOWER y radar de mercado para tu granja de Sunflower Land.">
+<meta name="theme-color" content="#120e24">
+<link rel="icon" href="img/icon.webp">
+<link rel="alternate" hreflang="es" href="index.html"><link rel="alternate" hreflang="en" href="index-en.html">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{color-scheme:dark;--night:#120e24;--plum:#1e1838;--line:#ffffff1f;--ink:#eceaf4;--muted:#aaa3c2;--sun:#ffc53d;--sun2:#ffb020;--leaf:#6cf2b0;
+ --display:'Instrument Sans',system-ui,-apple-system,'Segoe UI',sans-serif;--body:'Instrument Sans',system-ui,-apple-system,'Segoe UI',sans-serif}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--night);color:var(--ink);font:400 17px/1.6 var(--body);-webkit-font-smoothing:antialiased;
+ background-image:radial-gradient(70rem 40rem at 85% -10%,#3a2a12 0%,transparent 60%),radial-gradient(60rem 40rem at -10% 30%,#2a1d55 0%,transparent 60%)}
+a{color:var(--sun)}
+a:focus-visible,button:focus-visible,summary:focus-visible,.store:focus-visible{outline:3px solid var(--sun);outline-offset:3px;border-radius:12px}
+.wrap{max-width:1120px;margin:0 auto;padding-left:max(24px,env(safe-area-inset-left,0px));padding-right:max(24px,env(safe-area-inset-right,0px))}
+header{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:22px 0}
+.brand{display:flex;align-items:center;gap:12px;white-space:nowrap;color:var(--ink);text-decoration:none;font:600 22px var(--display)}
+.brand img{width:40px;height:40px;border-radius:11px}
+nav{display:flex;gap:20px;flex-wrap:wrap;font-size:15px}
+nav a{color:var(--muted);text-decoration:none}
+nav a:hover{color:var(--ink)}
+
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center;padding:56px 0 88px}
+h1{font:700 clamp(46px,6.6vw,80px)/1 var(--display);margin:0 0 22px;letter-spacing:-.03em;text-wrap:balance;color:var(--sun)}
+.lead{font-size:20px;color:#d5d0e6;max-width:34ch;margin:0 0 32px}
+.stores{display:flex;gap:14px;flex-wrap:wrap}
+.store{display:flex;flex-direction:column;justify-content:center;min-width:190px;padding:12px 20px;border-radius:14px;
+ background:#fff;color:#14102a;text-decoration:none;line-height:1.15}
+.store small{font-size:12px;font-weight:500}
+.store b{font-size:20px}
+.store[aria-disabled="true"]{background:transparent;color:var(--ink);border:1.5px dashed #ffffff55;cursor:default}
+.store[aria-disabled="true"] small{color:var(--leaf)}
+
+/* La tarjeta del temporizador, como en la app */
+.timer{background:linear-gradient(160deg,#ffffff14,#ffffff06);border:1px solid var(--line);border-radius:30px;padding:26px;
+ box-shadow:0 30px 80px #0008;max-width:430px;justify-self:end;width:100%}
+.timer p{margin:0;color:var(--muted);font-size:14px}
+.row{display:flex;align-items:center;gap:22px;margin:16px 0 22px}
+.ring{position:relative;width:132px;height:132px;flex:none}
+.ring svg{width:100%;height:100%;transform:rotate(-90deg)}
+.ring circle{fill:none;stroke-width:11}
+.ring .bg{stroke:#ffffff14}
+.ring .fg{stroke:var(--leaf);stroke-linecap:round;transition:stroke-dashoffset 1s linear}
+.ring img{position:absolute;inset:30px;width:72px;height:72px;border-radius:18px}
+.item{font:600 24px var(--display)}
+.cat{color:var(--muted);font-size:14px}
+.count{font:600 46px/1 var(--display);margin:8px 0 4px;font-variant-numeric:tabular-nums}
+.at{color:var(--muted);font-size:13px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.stats div{background:#ffffff0d;border-radius:16px;padding:12px 14px}
+.stats b{display:block;font:600 22px var(--display);white-space:nowrap}
+.stats span{color:var(--muted);font-size:13px}
+
+section{padding:64px 0}
+h2{font:700 clamp(30px,4vw,44px)/1.08 var(--display);margin:0 0 28px;letter-spacing:-.02em;text-wrap:balance}
+.shots{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 24px 18px;margin:0 -24px;scrollbar-width:thin}
+.shots img{flex:none;width:260px;height:auto;border-radius:22px;scroll-snap-align:start;border:1px solid var(--line)}
+
+.plans{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start}
+.plan{border-radius:24px;padding:28px;border:1px solid var(--line);background:#ffffff08}
+.plan.pro{border:1.5px solid var(--sun);background:linear-gradient(160deg,#ffc53d14,#ffffff05)}
+.plan h3{font:600 26px var(--display);margin:0 0 6px}
+.plan .price{color:var(--muted);font-size:15px;margin:0 0 16px;max-width:44ch}
+.plan ul{margin:0;padding:0;list-style:none}
+.plan li{padding:9px 0 9px 28px;border-top:1px solid var(--line);position:relative}
+.plan li::before{content:"";position:absolute;left:4px;top:17px;width:10px;height:10px;border-radius:3px;background:var(--leaf)}
+.plan.pro li::before{background:var(--sun)}
+
+.faq{max-width:760px}
+.faq p.lead2{color:#d5d0e6;margin:-10px 0 22px}
+details{border-top:1px solid var(--line);padding:4px 0}
+details:last-of-type{border-bottom:1px solid var(--line)}
+summary{cursor:pointer;padding:14px 0;font-weight:600;list-style:none;display:flex;justify-content:space-between;gap:16px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font:600 22px var(--display);color:var(--sun)}
+details[open] summary::after{content:"−"}
+details p{margin:0 0 16px;color:#cfc9e2}
+
+footer{padding:40px 0 56px;border-top:1px solid var(--line);color:var(--muted);font-size:14px}
+footer .links{display:flex;gap:18px;flex-wrap:wrap;margin-bottom:14px}
+footer a{color:var(--ink)}
+footer p{max-width:80ch;margin:0}
+
+@media (max-width:860px){
+ .hero{grid-template-columns:1fr;gap:40px;padding-top:24px}
+ .timer{justify-self:stretch;max-width:none}
+ .plans{grid-template-columns:1fr}
+}
+@media (max-width:520px){
+ .wrap{padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+ .shots{padding:4px 16px 18px;margin:0 -16px}
+ nav{gap:14px}
+ .row{gap:16px}.ring{width:104px;height:104px}.ring img{inset:24px;width:56px;height:56px}
+ .count{font-size:38px}.store{flex:1 1 0;min-width:0;padding:12px 16px}.store b{font-size:18px}
+ .stats b{font-size:17px}.stats div{padding:10px 12px}.nav-x{display:none}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.ring .fg{transition:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+ <a class="brand" href="index.html"><img src="img/icon.webp" alt="" width="40" height="40">SFL Farmhand</a>
+ <nav><a href="#soporte">Soporte</a><a class="nav-x" href="privacy.html">Privacidad</a><a class="nav-x" href="terms.html">Términos</a><a href="index-en.html" hreflang="en">English</a></nav>
+</header>
+
+<main>
+<div class="hero">
+ <div>
+  <h1>Tu granja, al segundo.</h1>
+  <p class="lead">Escribe tu Farm ID y mira cuánto falta para cada cosecha, qué entrega te deja más FLOWER y hacia dónde va el mercado.</p>
+  <div class="stores"><span class="store" role="link" aria-disabled="true"><small>Muy pronto</small><b>App Store</b></span><span class="store" role="link" aria-disabled="true"><small>Muy pronto</small><b>Google Play</b></span></div>
+ </div>
+ <div class="timer" aria-hidden="true">
+  <p>Siguiente en estar listo</p>
+  <div class="row">
+   <div class="ring"><svg viewBox="0 0 132 132"><circle class="bg" cx="66" cy="66" r="58"/><circle id="fg" class="fg" cx="66" cy="66" r="58"/></svg><img src="img/icon.webp" alt=""></div>
+   <div><div class="item">12× Sunflower</div><div class="cat">Cultivos</div><div class="count" id="count">42m 18s</div><div class="at">Listo a las <span id="at"></span></div></div>
+  </div>
+  <div class="stats"><div><b>87</b><span>Nivel</span></div><div><b>12,4 mil</b><span>Coins</span></div><div><b>356,2</b><span>Flower</span></div></div>
+ </div>
+</div>
+
+<section aria-labelledby="h-shots">
+ <h2 id="h-shots">Lo que ves en la app</h2>
+ <div class="shots" tabindex="0"><img src="img/es_1.webp" alt="Inicio con temporizadores" width="430" height="932" loading="lazy"><img src="img/es_2.webp" alt="Rentabilidad de entregas" width="430" height="932" loading="lazy"><img src="img/es_3.webp" alt="Radar de mercado" width="430" height="932" loading="lazy"><img src="img/es_4.webp" alt="Comidas para subir de nivel" width="430" height="932" loading="lazy"><img src="img/es_5.webp" alt="Expansión de tierra" width="430" height="932" loading="lazy"><img src="img/es_6.webp" alt="Mascotas y Marvels" width="430" height="932" loading="lazy"></div>
+</section>
+
+<section aria-labelledby="h-plans">
+ <h2 id="h-plans">Gratis para empezar. Pro para ir más lejos.</h2>
+ <div class="plans">
+  <div class="plan"><h3>Gratis</h3><ul><li>Temporizadores de toda la granja y avisos</li><li>Inventario con su valor en FLOWER</li><li>NFTs, calculadora y calendario</li><li>Pase de temporada</li><li>Rentabilidad de entregas</li><li>Expansión de tierra</li></ul></div>
+  <div class="plan pro"><h3>SFL Farmhand Pro</h3><p class="price">1,99 USD cada 3 meses (7 días gratis la primera vez) o un pago único de 9,99 USD.</p><ul><li>Movimientos de tu granja</li><li>Radar de mercado</li><li>Progreso de Marvels</li><li>Comidas para subir de nivel</li><li>Rentabilidad de animales</li><li>Mascotas y mascota de facción</li><li>Excavaciones disponibles</li></ul></div>
+ </div>
+</section>
+
+<section id="soporte" class="faq" aria-labelledby="h-faq">
+ <h2 id="h-faq">Soporte</h2>
+ <p class="lead2">¿Dudas, errores o ideas? Escríbenos a <a href="mailto:nesstrikedev@gmail.com">nesstrikedev@gmail.com</a></p>
+ <details><summary>¿Dónde encuentro mi Farm ID?</summary><p>Es el número que aparece junto a tu nombre en el juego.</p></details><details><summary>¿La app necesita mi cartera o contraseña?</summary><p>No. Solo usa tu Farm ID público; nunca te pedirá claves privadas ni frases de recuperación.</p></details><details><summary>¿Por qué un dato no coincide con el juego?</summary><p>La app muestra lo último que el juego guardó en el servidor, y algunos valores son estimaciones. Desliza hacia abajo para actualizar.</p></details><details><summary>¿Cómo cancelo la suscripción?</summary><p>iPhone: Ajustes → tu nombre → Suscripciones. Android: Google Play → Perfil → Pagos y suscripciones. Cancela al menos 24 horas antes del final del periodo para que no se renueve.</p></details><details><summary>¿Cómo pido un reembolso?</summary><p>Los pagos los gestiona la tienda: en reportaproblem.apple.com (App Store) o en el historial de compras de Google Play.</p></details><details><summary>Cambié de teléfono, ¿pierdo Pro?</summary><p>No. Entra con la misma cuenta de Apple o Google y pulsa "Restaurar compras" en Ajustes → SFL Farmhand Pro.</p></details><details><summary>¿Cómo borro mis datos?</summary><p>En Ajustes → Legal y privacidad → "Borrar todos los datos de la app", o desinstalando la app. Tus compras no se pierden.</p></details>
+</section>
+</main>
+
+<footer>
+ <div class="links"><a href="privacy.html">Privacidad</a><a href="terms.html">Términos</a><a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">EULA de Apple</a><a href="mailto:nesstrikedev@gmail.com">nesstrikedev@gmail.com</a></div>
+ <p>SFL Farmhand es un proyecto independiente y no oficial; no forma parte de Sunflower Land ni está afiliado a Sunflower Land. Las imágenes del juego pertenecen a sus dueños. Los precios del mercado son informativos y no son asesoramiento financiero.</p>
+</footer>
+</div>
+<script>
+(function(){
+  var total = 45*60, left = 42*60+18;            // un cultivo de 45 min al que le quedan 42:18
+  var el = document.getElementById('count'), fg = document.getElementById('fg'), at = document.getElementById('at');
+  var C = 2*Math.PI*58; fg.style.strokeDasharray = C;
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var ready = new Date(Date.now() + left*1000);
+  at.textContent = ready.toLocaleTimeString(document.documentElement.lang, {hour:'2-digit', minute:'2-digit'});
+  function draw(){
+    var m = Math.floor(left/60), s = left%60;
+    el.textContent = m + 'm ' + (s<10?'0':'') + s + 's';
+    fg.style.strokeDashoffset = C * (1 - left/total);
+  }
+  draw();
+  if (reduce) return;
+  setInterval(function(){ left = left>0 ? left-1 : total; draw(); }, 1000);
+})();
+</script>
+</body>
+</html>
