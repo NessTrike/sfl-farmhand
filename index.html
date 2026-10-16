@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>SFL Farmhand · Tu ayudante de granja para Sunflower Land</title>
 <meta name="description" content="Temporizadores en vivo, rentabilidad en FLOWER y radar de mercado para tu granja de Sunflower Land.">
 <meta name="theme-color" content="#120e24">
@@ -11,34 +11,35 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
+/* Capa: hero con temporizador vivo · filas de funciones alternadas · tabla Gratis/Pro · soporte en dos columnas · cierre con botones */
 :root{color-scheme:dark;--night:#120e24;--plum:#1e1838;--line:#ffffff1f;--ink:#eceaf4;--muted:#aaa3c2;--sun:#ffc53d;--sun2:#ffb020;--leaf:#6cf2b0;
- --display:'Instrument Sans',system-ui,-apple-system,'Segoe UI',sans-serif;--body:'Instrument Sans',system-ui,-apple-system,'Segoe UI',sans-serif}
+ --font:'Instrument Sans',system-ui,-apple-system,'Segoe UI',sans-serif}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:var(--night);color:var(--ink);font:400 17px/1.6 var(--body);-webkit-font-smoothing:antialiased;
+body{margin:0;background:var(--night);color:var(--ink);font:400 17px/1.6 var(--font);-webkit-font-smoothing:antialiased;
  background-image:radial-gradient(70rem 40rem at 85% -10%,#3a2a12 0%,transparent 60%),radial-gradient(60rem 40rem at -10% 30%,#2a1d55 0%,transparent 60%)}
 a{color:var(--sun)}
-a:focus-visible,button:focus-visible,summary:focus-visible,.store:focus-visible{outline:3px solid var(--sun);outline-offset:3px;border-radius:12px}
+a:focus-visible,summary:focus-visible,.store:focus-visible{outline:3px solid var(--sun);outline-offset:3px;border-radius:12px}
 .wrap{max-width:1120px;margin:0 auto;padding-left:max(24px,env(safe-area-inset-left,0px));padding-right:max(24px,env(safe-area-inset-right,0px))}
 header{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:22px 0}
-.brand{display:flex;align-items:center;gap:12px;white-space:nowrap;color:var(--ink);text-decoration:none;font:600 22px var(--display)}
+.brand{display:flex;align-items:center;gap:12px;color:var(--ink);text-decoration:none;font:700 21px var(--font);white-space:nowrap}
 .brand img{width:40px;height:40px;border-radius:11px}
-nav{display:flex;gap:20px;flex-wrap:wrap;font-size:15px}
+nav{display:flex;gap:22px;flex-wrap:wrap;font-size:15px}
 nav a{color:var(--muted);text-decoration:none}
 nav a:hover{color:var(--ink)}
 
-.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center;padding:56px 0 88px}
-h1{font:700 clamp(46px,6.6vw,80px)/1 var(--display);margin:0 0 22px;letter-spacing:-.03em;text-wrap:balance;color:var(--sun)}
+/* Hero */
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center;padding:56px 0 96px}
+h1{font:700 clamp(46px,6.6vw,80px)/1 var(--font);margin:0 0 22px;letter-spacing:-.03em;color:var(--sun);text-wrap:balance}
 .lead{font-size:20px;color:#d5d0e6;max-width:34ch;margin:0 0 32px}
-.stores{display:flex;gap:14px;flex-wrap:wrap}
-.store{display:flex;flex-direction:column;justify-content:center;min-width:190px;padding:12px 20px;border-radius:14px;
+.stores{display:flex;gap:12px;flex-wrap:wrap}
+.store{display:flex;flex-direction:column;justify-content:center;min-width:168px;padding:11px 18px;border-radius:14px;
  background:#fff;color:#14102a;text-decoration:none;line-height:1.15}
 .store small{font-size:12px;font-weight:500}
-.store b{font-size:20px}
+.store b{font-size:19px}
 .store[aria-disabled="true"]{background:transparent;color:var(--ink);border:1.5px dashed #ffffff55;cursor:default}
 .store[aria-disabled="true"] small{color:var(--leaf)}
 
-/* La tarjeta del temporizador, como en la app */
 .timer{background:linear-gradient(160deg,#ffffff14,#ffffff06);border:1px solid var(--line);border-radius:30px;padding:26px;
  box-shadow:0 30px 80px #0008;max-width:430px;justify-self:end;width:100%}
 .timer p{margin:0;color:var(--muted);font-size:14px}
@@ -49,57 +50,109 @@ h1{font:700 clamp(46px,6.6vw,80px)/1 var(--display);margin:0 0 22px;letter-spaci
 .ring .bg{stroke:#ffffff14}
 .ring .fg{stroke:var(--leaf);stroke-linecap:round;transition:stroke-dashoffset 1s linear}
 .ring img{position:absolute;inset:30px;width:72px;height:72px;border-radius:18px}
-.item{font:600 24px var(--display)}
+.item{font:700 24px var(--font)}
 .cat{color:var(--muted);font-size:14px}
-.count{font:600 46px/1 var(--display);margin:8px 0 4px;font-variant-numeric:tabular-nums}
+.count{font:700 46px/1 var(--font);margin:8px 0 4px;font-variant-numeric:tabular-nums;letter-spacing:-.02em}
 .at{color:var(--muted);font-size:13px}
 .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
 .stats div{background:#ffffff0d;border-radius:16px;padding:12px 14px}
-.stats b{display:block;font:600 22px var(--display);white-space:nowrap}
+.stats b{display:block;font:700 22px var(--font);white-space:nowrap}
 .stats span{color:var(--muted);font-size:13px}
 
-section{padding:64px 0}
-h2{font:700 clamp(30px,4vw,44px)/1.08 var(--display);margin:0 0 28px;letter-spacing:-.02em;text-wrap:balance}
-.shots{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 24px 18px;margin:0 -24px;scrollbar-width:thin}
-.shots img{flex:none;width:260px;height:auto;border-radius:22px;scroll-snap-align:start;border:1px solid var(--line)}
+/* Secciones */
+section{padding:72px 0}
+h2{font:700 clamp(32px,4.4vw,52px)/1.05 var(--font);margin:0 0 14px;letter-spacing:-.025em;text-wrap:balance;max-width:20ch}
+.sublead{color:#cfc9e2;font-size:19px;max-width:52ch;margin:0 0 56px}
 
-.plans{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start}
-.plan{border-radius:24px;padding:28px;border:1px solid var(--line);background:#ffffff08}
-.plan.pro{border:1.5px solid var(--sun);background:linear-gradient(160deg,#ffc53d14,#ffffff05)}
-.plan h3{font:600 26px var(--display);margin:0 0 6px}
-.plan .price{color:var(--muted);font-size:15px;margin:0 0 16px;max-width:44ch}
-.plan ul{margin:0;padding:0;list-style:none}
-.plan li{padding:9px 0 9px 28px;border-top:1px solid var(--line);position:relative}
-.plan li::before{content:"";position:absolute;left:4px;top:17px;width:10px;height:10px;border-radius:3px;background:var(--leaf)}
-.plan.pro li::before{background:var(--sun)}
+/* Funciones: filas alternadas, la captura se recorta para mostrar solo la app */
+.feature{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;padding:28px 0}
+.feature + .feature{border-top:1px solid var(--line);padding-top:56px;margin-top:28px}
+.feature:nth-of-type(even) .shot{order:-1}
+.shot{position:relative;border-radius:34px;overflow:hidden;aspect-ratio:430/650;max-width:400px;width:100%;justify-self:center;
+ border:1px solid var(--line);box-shadow:0 40px 90px #000a}
+.shot img{width:100%;height:100%;object-fit:cover;object-position:50% 100%;display:block}
+.tag{display:inline-block;font-size:13px;font-weight:600;padding:4px 12px;border-radius:999px;margin-bottom:14px}
+.tag.free{background:#6cf2b01f;color:var(--leaf)}
+.tag.pro{background:#ffc53d24;color:var(--sun)}
+.feature h3{font:700 clamp(28px,3.2vw,38px)/1.1 var(--font);letter-spacing:-.02em;margin:0 0 14px;text-wrap:balance}
+.feature p{color:#d5d0e6;font-size:18px;margin:0 0 20px;max-width:42ch}
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chips span{font-size:14px;padding:6px 12px;border-radius:10px;background:#ffffff0f;color:var(--ink)}
 
-.faq{max-width:760px}
-.faq p.lead2{color:#d5d0e6;margin:-10px 0 22px}
+.more{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:40px}
+.mini{display:grid;grid-template-columns:120px 1fr;gap:20px;align-items:center;padding:18px;border-radius:24px;background:#ffffff08;border:1px solid var(--line)}
+.mini .thumb{border-radius:16px;overflow:hidden;aspect-ratio:3/4}
+.mini .thumb img{width:100%;height:100%;object-fit:cover;object-position:50% 70%;display:block}
+.mini h4{font:700 20px/1.2 var(--font);margin:6px 0 6px}
+.mini p{margin:0;color:var(--muted);font-size:15px}
+.mini .tag{margin:0}
+.more-title{font:700 22px var(--font);margin:64px 0 0}
+
+/* Gratis vs Pro */
+.compare{display:grid;grid-template-columns:1.4fr .8fr;gap:28px;align-items:start}
+.tablewrap{overflow-x:auto;border-radius:24px;border:1px solid var(--line);background:#ffffff06}
+table{width:100%;border-collapse:collapse;font-size:16px}
+th,td{padding:13px 18px;text-align:left}
+th{font-size:14px;color:var(--muted);font-weight:600;border-bottom:1px solid var(--line)}
+td{border-top:1px solid #ffffff10}
+tr:first-child td{border-top:0}
+th.c,td.c{text-align:center;width:88px}
+th.pro{color:var(--sun)}
+td.c svg{width:20px;height:20px;vertical-align:middle}
+.price{position:sticky;top:24px;border-radius:28px;padding:28px;border:1.5px solid var(--sun);
+ background:linear-gradient(170deg,#ffc53d22,#ffc53d06 60%);box-shadow:0 30px 80px #0007}
+.price h3{font:700 26px var(--font);margin:0 0 18px;color:var(--sun)}
+.opt{padding:16px 0;border-top:1px solid #ffffff1a}
+.opt b{display:block;font:700 34px/1.05 var(--font);letter-spacing:-.02em}
+.opt span{color:#d5d0e6;font-size:15px}
+
+/* Soporte */
+.support{display:grid;grid-template-columns:.8fr 1.2fr;gap:40px;align-items:start}
+.contact{border-radius:24px;padding:28px;background:#ffffff08;border:1px solid var(--line)}
+.contact h3{font:700 22px/1.25 var(--font);margin:0 0 8px}
+.contact p{color:var(--muted);margin:0 0 18px}
+.mail{display:inline-block;font:600 18px var(--font);color:var(--night);background:var(--sun);padding:12px 18px;border-radius:12px;text-decoration:none;word-break:break-all}
 details{border-top:1px solid var(--line);padding:4px 0}
 details:last-of-type{border-bottom:1px solid var(--line)}
-summary{cursor:pointer;padding:14px 0;font-weight:600;list-style:none;display:flex;justify-content:space-between;gap:16px}
+summary{cursor:pointer;padding:15px 0;font-weight:600;list-style:none;display:flex;justify-content:space-between;gap:16px}
 summary::-webkit-details-marker{display:none}
-summary::after{content:"+";font:600 22px var(--display);color:var(--sun)}
+summary::after{content:"+";font:600 22px/1 var(--font);color:var(--sun)}
 details[open] summary::after{content:"−"}
 details p{margin:0 0 16px;color:#cfc9e2}
 
-footer{padding:40px 0 56px;border-top:1px solid var(--line);color:var(--muted);font-size:14px}
+/* Cierre */
+.cta{margin:24px 0 72px;border-radius:36px;padding:56px 48px;text-align:center;border:1px solid var(--line);
+ background:radial-gradient(40rem 20rem at 50% 0%,#ffc53d33,transparent 70%),linear-gradient(180deg,#221a40,#171230)}
+.cta img{width:72px;height:72px;border-radius:18px;margin-bottom:18px}
+.cta h2{margin:0 auto 10px}
+.cta p{color:#d5d0e6;margin:0 0 28px;font-size:18px}
+.cta .stores{justify-content:center}
+
+footer{padding:36px 0 56px;border-top:1px solid var(--line);color:var(--muted);font-size:14px}
 footer .links{display:flex;gap:18px;flex-wrap:wrap;margin-bottom:14px}
 footer a{color:var(--ink)}
 footer p{max-width:80ch;margin:0}
 
-@media (max-width:860px){
+@media (max-width:900px){
  .hero{grid-template-columns:1fr;gap:40px;padding-top:24px}
  .timer{justify-self:stretch;max-width:none}
- .plans{grid-template-columns:1fr}
+ .feature{grid-template-columns:1fr;gap:28px}
+ .feature:nth-of-type(even) .shot{order:0}
+ .shot{max-width:340px}
+ .more,.compare,.support{grid-template-columns:1fr}
+ .price{position:static}
 }
-@media (max-width:520px){
+@media (max-width:560px){
  .wrap{padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
- .shots{padding:4px 16px 18px;margin:0 -16px}
- nav{gap:14px}
+ nav{gap:14px}.nav-x{display:none}
  .row{gap:16px}.ring{width:104px;height:104px}.ring img{inset:24px;width:56px;height:56px}
- .count{font-size:38px}.store{flex:1 1 0;min-width:0;padding:12px 16px}.store b{font-size:18px}
- .stats b{font-size:17px}.stats div{padding:10px 12px}.nav-x{display:none}
+ .count{font-size:38px}
+ .store{flex:1 1 140px;min-width:0;padding:11px 14px}.store b{font-size:17px}
+ .stats b{font-size:17px}.stats div{padding:10px 12px}
+ section{padding:56px 0}.sublead{margin-bottom:36px}
+ .mini{grid-template-columns:92px 1fr;gap:14px;padding:14px}
+ th,td{padding:12px 12px}th.c,td.c{width:64px}
+ .cta{padding:40px 20px;border-radius:28px}
 }
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.ring .fg{transition:none}}
 </style>
@@ -108,7 +161,7 @@ footer p{max-width:80ch;margin:0}
 <div class="wrap">
 <header>
  <a class="brand" href="index.html"><img src="img/icon.webp" alt="" width="40" height="40">SFL Farmhand</a>
- <nav><a href="#soporte">Soporte</a><a class="nav-x" href="privacy.html">Privacidad</a><a class="nav-x" href="terms.html">Términos</a><a href="index-en.html" hreflang="en">English</a></nav>
+ <nav><a class="nav-x" href="#funciones">Funciones</a><a class="nav-x" href="#pro">Pro</a><a href="#soporte">Soporte</a><a href="index-en.html" hreflang="en">English</a></nav>
 </header>
 
 <main>
@@ -116,7 +169,7 @@ footer p{max-width:80ch;margin:0}
  <div>
   <h1>Tu granja, al segundo.</h1>
   <p class="lead">Escribe tu Farm ID y mira cuánto falta para cada cosecha, qué entrega te deja más FLOWER y hacia dónde va el mercado.</p>
-  <div class="stores"><span class="store" role="link" aria-disabled="true"><small>Muy pronto</small><b>App Store</b></span><span class="store" role="link" aria-disabled="true"><small>Muy pronto</small><b>Google Play</b></span></div>
+  <div class="stores"><span class="store" role="link" aria-disabled="true"><small>Muy pronto</small><b>App Store</b></span><span class="store" role="link" aria-disabled="true"><small>Muy pronto</small><b>Google Play</b></span><span class="store" role="link" aria-disabled="true"><small>Muy pronto</small><b>Versión web</b></span></div>
  </div>
  <div class="timer" aria-hidden="true">
   <p>Siguiente en estar listo</p>
@@ -128,24 +181,44 @@ footer p{max-width:80ch;margin:0}
  </div>
 </div>
 
-<section aria-labelledby="h-shots">
- <h2 id="h-shots">Lo que ves en la app</h2>
- <div class="shots" tabindex="0"><img src="img/es_1.webp" alt="Inicio con temporizadores" width="430" height="932" loading="lazy"><img src="img/es_2.webp" alt="Rentabilidad de entregas" width="430" height="932" loading="lazy"><img src="img/es_3.webp" alt="Radar de mercado" width="430" height="932" loading="lazy"><img src="img/es_4.webp" alt="Comidas para subir de nivel" width="430" height="932" loading="lazy"><img src="img/es_5.webp" alt="Expansión de tierra" width="430" height="932" loading="lazy"><img src="img/es_6.webp" alt="Mascotas y Marvels" width="430" height="932" loading="lazy"></div>
+<section id="funciones" aria-labelledby="h-feat">
+ <h2 id="h-feat">Todo lo que pasa en tu granja, en tu bolsillo</h2>
+ <p class="sublead">Lee los datos públicos de tu granja con tu Farm ID. Sin contraseñas, sin cartera, sin registrarte.</p>
+ <article class="feature"><div><span class="tag free">Gratis</span><h3>Cada cosecha, a tiempo</h3><p>Temporizadores en vivo de cultivos, frutales, invernadero, animales, cocina, compost y recursos. Te avisamos en el teléfono cuando algo está listo.</p><div class="chips"><span>Avisos por categoría</span><span>Se actualiza cada minuto</span></div></div><div class="shot"><img src="img/es_1.webp" alt="Cada cosecha, a tiempo" width="430" height="932" loading="lazy"></div></article><article class="feature"><div><span class="tag free">Gratis</span><h3>Entrega solo lo que deja ganancia</h3><p>Compara lo que te cuesta cada pedido con lo que te paga, en FLOWER y con precios reales del mercado.</p><div class="chips"><span>Ganancia por pedido</span><span>Precios del mercado</span></div></div><div class="shot"><img src="img/es_2.webp" alt="Entrega solo lo que deja ganancia" width="430" height="932" loading="lazy"></div></article><article class="feature"><div><span class="tag pro">Pro</span><h3>Anticípate al mercado</h3><p>El radar marca lo que sube y lo que baja por día, semana y mes, y te sugiere ideas de compra y venta.</p><div class="chips"><span>Subidas y bajadas</span><span>Ideas de inversión</span></div></div><div class="shot"><img src="img/es_3.webp" alt="Anticípate al mercado" width="430" height="932" loading="lazy"></div></article><article class="feature"><div><span class="tag pro">Pro</span><h3>Sube de nivel más rápido</h3><p>Las comidas que más XP te dan por cada FLOWER, teniendo en cuenta tus skills y objetos.</p><div class="chips"><span>XP por FLOWER</span><span>Con tus boosts</span></div></div><div class="shot"><img src="img/es_4.webp" alt="Sube de nivel más rápido" width="430" height="932" loading="lazy"></div></article>
+ <h3 class="more-title">Y además</h3>
+ <div class="more"><div class="mini"><div class="thumb"><img src="img/es_5.webp" alt="" width="430" height="932" loading="lazy"></div><div><span class="tag free">Gratis</span><h4>Expansión de tierra</h4><p>Qué recursos te faltan para la siguiente expansión y cuánto cuestan en FLOWER.</p></div></div><div class="mini"><div class="thumb"><img src="img/es_6.webp" alt="" width="430" height="932" loading="lazy"></div><div><span class="tag pro">Pro</span><h4>Mascotas, Marvels y excavaciones</h4><p>Peticiones de comida de tus mascotas, progreso de Marine Marvels y excavaciones del desierto.</p></div></div></div>
 </section>
 
-<section aria-labelledby="h-plans">
+<section id="pro" aria-labelledby="h-plans">
  <h2 id="h-plans">Gratis para empezar. Pro para ir más lejos.</h2>
- <div class="plans">
-  <div class="plan"><h3>Gratis</h3><ul><li>Temporizadores de toda la granja y avisos</li><li>Inventario con su valor en FLOWER</li><li>NFTs, calculadora y calendario</li><li>Pase de temporada</li><li>Rentabilidad de entregas</li><li>Expansión de tierra</li></ul></div>
-  <div class="plan pro"><h3>SFL Farmhand Pro</h3><p class="price">1,99 USD cada 3 meses (7 días gratis la primera vez) o un pago único de 9,99 USD.</p><ul><li>Movimientos de tu granja</li><li>Radar de mercado</li><li>Progreso de Marvels</li><li>Comidas para subir de nivel</li><li>Rentabilidad de animales</li><li>Mascotas y mascota de facción</li><li>Excavaciones disponibles</li></ul></div>
+ <p class="sublead">Todo lo básico es gratis para siempre. Pro desbloquea las herramientas para decidir con datos.</p>
+ <div class="compare">
+  <div class="tablewrap"><table>
+   <thead><tr><th>Función</th><th class="c">Gratis</th><th class="c pro">Pro</th></tr></thead>
+   <tbody><tr><td>Temporizadores y avisos</td><td class="c" aria-label="Incluido"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="10" fill="#6cf2b0" opacity=".18"/><path d="M5.5 10.4l3 3 6-6.6" fill="none" stroke="#6cf2b0" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></td><td class="c" aria-label="Incluido"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="10" fill="#ffc53d" opacity=".18"/><path d="M5.5 10.4l3 3 6-6.6" fill="none" stroke="#ffc53d" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></td></tr><tr><td>Inventario con su valor en FLOWER</td><td class="c" aria-label="Incluido"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="10" fill="#6cf2b0" opacity=".18"/><path d="M5.5 10.4l3 3 6-6.6" fill="none" stroke="#6cf2b0" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></td><td class="c" aria-label="Incluido"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="10" fill="#ffc53d" opacity=".18"/><path d="M5.5 10.4l3 3 6-6.6" fill="none" stroke="#ffc53d" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></td></tr><tr><td>NFTs, calculadora y calendario</td><td class="c" aria-label="Incluido"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="10" fill="#6cf2b0" opacity=".18"/><path d="M5.5 10.4l3 3 6-6.6" fill="none" stroke="#6cf2b0" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></td><td class="c" aria-label="Incluido"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="10" fill="#ffc53d" opacity=".18"/><path d="M5.5 10.4l3 3 6-6.6" fill="none" stroke="#ffc53d" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></td></tr><tr><td>Pase de temporada</td><td class="c" aria-label="Incluido"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="10" fill="#6cf2b0" opacity=".18"/><path d="M5.5 10.4l3 3 6-6.6" fill="none" stroke="#6cf2b0" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></td><td class="c" aria-label="Incluido"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="10" fill="#ffc53d" opacity=".18"/><path d="M5.5 10.4l3 3 6-6.6" fill="none" stroke="#ffc53d" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></td></tr><tr><td>Rentabilidad de entregas</td><td class="c" aria-label="Incluido"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="10" fill="#6cf2b0" opacity=".18"/><path d="M5.5 10.4l3 3 6-6.6" fill="none" stroke="#6cf2b0" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></td><td class="c" aria-label="Incluido"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="10" fill="#ffc53d" opacity=".18"/><path d="M5.5 10.4l3 3 6-6.6" fill="none" stroke="#ffc53d" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></td></tr><tr><td>Expansión de tierra</td><td class="c" aria-label="Incluido"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="10" fill="#6cf2b0" opacity=".18"/><path d="M5.5 10.4l3 3 6-6.6" fill="none" stroke="#6cf2b0" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></td><td class="c" aria-label="Incluido"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="10" fill="#ffc53d" opacity=".18"/><path d="M5.5 10.4l3 3 6-6.6" fill="none" stroke="#ffc53d" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></td></tr><tr><td>Movimientos de tu granja</td><td class="c" aria-label="No incluido"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M6 10h8" stroke="#ffffff40" stroke-width="2.2" stroke-linecap="round"/></svg></td><td class="c" aria-label="Incluido"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="10" fill="#ffc53d" opacity=".18"/><path d="M5.5 10.4l3 3 6-6.6" fill="none" stroke="#ffc53d" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></td></tr><tr><td>Radar de mercado</td><td class="c" aria-label="No incluido"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M6 10h8" stroke="#ffffff40" stroke-width="2.2" stroke-linecap="round"/></svg></td><td class="c" aria-label="Incluido"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="10" fill="#ffc53d" opacity=".18"/><path d="M5.5 10.4l3 3 6-6.6" fill="none" stroke="#ffc53d" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></td></tr><tr><td>Progreso de Marvels</td><td class="c" aria-label="No incluido"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M6 10h8" stroke="#ffffff40" stroke-width="2.2" stroke-linecap="round"/></svg></td><td class="c" aria-label="Incluido"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="10" fill="#ffc53d" opacity=".18"/><path d="M5.5 10.4l3 3 6-6.6" fill="none" stroke="#ffc53d" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></td></tr><tr><td>Comidas para subir de nivel</td><td class="c" aria-label="No incluido"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M6 10h8" stroke="#ffffff40" stroke-width="2.2" stroke-linecap="round"/></svg></td><td class="c" aria-label="Incluido"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="10" fill="#ffc53d" opacity=".18"/><path d="M5.5 10.4l3 3 6-6.6" fill="none" stroke="#ffc53d" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></td></tr><tr><td>Rentabilidad de animales</td><td class="c" aria-label="No incluido"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M6 10h8" stroke="#ffffff40" stroke-width="2.2" stroke-linecap="round"/></svg></td><td class="c" aria-label="Incluido"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="10" fill="#ffc53d" opacity=".18"/><path d="M5.5 10.4l3 3 6-6.6" fill="none" stroke="#ffc53d" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></td></tr><tr><td>Mascotas y mascota de facción</td><td class="c" aria-label="No incluido"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M6 10h8" stroke="#ffffff40" stroke-width="2.2" stroke-linecap="round"/></svg></td><td class="c" aria-label="Incluido"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="10" fill="#ffc53d" opacity=".18"/><path d="M5.5 10.4l3 3 6-6.6" fill="none" stroke="#ffc53d" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></td></tr><tr><td>Excavaciones disponibles</td><td class="c" aria-label="No incluido"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M6 10h8" stroke="#ffffff40" stroke-width="2.2" stroke-linecap="round"/></svg></td><td class="c" aria-label="Incluido"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="10" fill="#ffc53d" opacity=".18"/><path d="M5.5 10.4l3 3 6-6.6" fill="none" stroke="#ffc53d" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></td></tr></tbody>
+  </table></div>
+  <div class="price">
+   <h3>SFL Farmhand Pro</h3>
+   <div class="opt"><b>1,99 USD</b><span>cada 3 meses · 7 días gratis</span></div>
+   <div class="opt"><b>9,99 USD</b><span>pago único, para siempre</span></div>
+  </div>
  </div>
 </section>
 
-<section id="soporte" class="faq" aria-labelledby="h-faq">
- <h2 id="h-faq">Soporte</h2>
- <p class="lead2">¿Dudas, errores o ideas? Escríbenos a <a href="mailto:nesstrikedev@gmail.com">nesstrikedev@gmail.com</a></p>
- <details><summary>¿Dónde encuentro mi Farm ID?</summary><p>Es el número que aparece junto a tu nombre en el juego.</p></details><details><summary>¿La app necesita mi cartera o contraseña?</summary><p>No. Solo usa tu Farm ID público; nunca te pedirá claves privadas ni frases de recuperación.</p></details><details><summary>¿Por qué un dato no coincide con el juego?</summary><p>La app muestra lo último que el juego guardó en el servidor, y algunos valores son estimaciones. Desliza hacia abajo para actualizar.</p></details><details><summary>¿Cómo cancelo la suscripción?</summary><p>iPhone: Ajustes → tu nombre → Suscripciones. Android: Google Play → Perfil → Pagos y suscripciones. Cancela al menos 24 horas antes del final del periodo para que no se renueve.</p></details><details><summary>¿Cómo pido un reembolso?</summary><p>Los pagos los gestiona la tienda: en reportaproblem.apple.com (App Store) o en el historial de compras de Google Play.</p></details><details><summary>Cambié de teléfono, ¿pierdo Pro?</summary><p>No. Entra con la misma cuenta de Apple o Google y pulsa "Restaurar compras" en Ajustes → SFL Farmhand Pro.</p></details><details><summary>¿Cómo borro mis datos?</summary><p>En Ajustes → Legal y privacidad → "Borrar todos los datos de la app", o desinstalando la app. Tus compras no se pierden.</p></details>
+<section id="soporte" aria-labelledby="h-sup">
+ <h2 id="h-sup">Soporte</h2>
+ <div class="support">
+  <div class="contact"><h3>¿Algo no funciona o tienes una idea?</h3><p>Escríbenos y te respondemos lo antes posible.</p><a class="mail" href="mailto:nesstrikedev@gmail.com">nesstrikedev@gmail.com</a></div>
+  <div class="faq"><details><summary>¿Dónde encuentro mi Farm ID?</summary><p>Es el número que aparece junto a tu nombre en el juego.</p></details><details><summary>¿La app necesita mi cartera o contraseña?</summary><p>No. Solo usa tu Farm ID público; nunca te pedirá claves privadas ni frases de recuperación.</p></details><details><summary>¿Por qué un dato no coincide con el juego?</summary><p>La app muestra lo último que el juego guardó en el servidor, y algunos valores son estimaciones. Desliza hacia abajo para actualizar.</p></details><details><summary>¿Cómo cancelo la suscripción?</summary><p>iPhone: Ajustes → tu nombre → Suscripciones. Android: Google Play → Perfil → Pagos y suscripciones. Cancela al menos 24 horas antes del final del periodo para que no se renueve.</p></details><details><summary>¿Cómo pido un reembolso?</summary><p>Los pagos los gestiona la tienda: en reportaproblem.apple.com (App Store) o en el historial de compras de Google Play.</p></details><details><summary>Cambié de teléfono, ¿pierdo Pro?</summary><p>No. Entra con la misma cuenta de Apple o Google y pulsa "Restaurar compras" en Ajustes → SFL Farmhand Pro.</p></details><details><summary>¿Cómo borro mis datos?</summary><p>En Ajustes → Legal y privacidad → "Borrar todos los datos de la app", o desinstalando la app. Tus compras no se pierden.</p></details></div>
+ </div>
 </section>
+
+<div class="cta">
+ <img src="img/icon.webp" alt="" width="72" height="72">
+ <h2>Tu granja te espera.</h2>
+ <p>Disponible muy pronto en iPhone, Android y en tu navegador.</p>
+ <div class="stores"><span class="store" role="link" aria-disabled="true"><small>Muy pronto</small><b>App Store</b></span><span class="store" role="link" aria-disabled="true"><small>Muy pronto</small><b>Google Play</b></span><span class="store" role="link" aria-disabled="true"><small>Muy pronto</small><b>Versión web</b></span></div>
+</div>
 </main>
 
 <footer>
@@ -159,8 +232,7 @@ footer p{max-width:80ch;margin:0}
   var el = document.getElementById('count'), fg = document.getElementById('fg'), at = document.getElementById('at');
   var C = 2*Math.PI*58; fg.style.strokeDasharray = C;
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var ready = new Date(Date.now() + left*1000);
-  at.textContent = ready.toLocaleTimeString(document.documentElement.lang, {hour:'2-digit', minute:'2-digit'});
+  at.textContent = new Date(Date.now() + left*1000).toLocaleTimeString(document.documentElement.lang, {hour:'2-digit', minute:'2-digit'});
   function draw(){
     var m = Math.floor(left/60), s = left%60;
     el.textContent = m + 'm ' + (s<10?'0':'') + s + 's';
