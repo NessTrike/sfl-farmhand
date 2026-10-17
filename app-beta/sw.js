@@ -1,10 +1,10 @@
-// Service worker de SFL Farmhand (web). build.mjs lo copia a dist/sw.js cambiando 8f87ac631f por la versión.
+// Service worker de SFL Farmhand (web). build.mjs lo copia a dist/sw.js cambiando 8683ced3aa por la versión.
 // - index.html (navegación): primero la red; sin red, la copia guardada (la app abre sin conexión).
 // - app.js / app.css / iconos / manifest (el armazón, con ?v=versión): de la caché; se guardan al instalar.
 // - data/*.json: stale-while-revalidate (responde con la copia y la actualiza en segundo plano).
 // - Nada de otros orígenes (API del intermediario, imágenes del juego): pasa directo, sin guardarse aquí
 //   (las imágenes quedan en la caché normal del navegador).
-const VERSION = "8f87ac631f";
+const VERSION = "8683ced3aa";
 // Prefijo de las cachés: "sfl" (web) o "sfl-beta" (beta en /app-beta/, mismo origen: no se pisan).
 const PREFIX = "sfl-beta";
 const SHELL = `${PREFIX}-shell-${VERSION}`;

@@ -290,5 +290,7 @@
   "vuelve aprox. el %@": "back around %@",
   "válidos hasta el %@": "valid until %@",
   "Último uso": "Last used",
-  "Lista de códigos": "Code list"
+  "Lista de códigos": "Code list",
+  "Sunflower Land va lento, reintentando…": "Sunflower Land is slow, retrying…",
+  "Sunflower Land va lento: datos de %@": "Sunflower Land is slow: data from %@"
 }
