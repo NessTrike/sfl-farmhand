@@ -1,12 +1,14 @@
-// Service worker de SFL Farmhand (web). build.mjs lo copia a dist/sw.js cambiando cfbce0d174 por la versión.
+// Service worker de SFL Farmhand (web). build.mjs lo copia a dist/sw.js cambiando 36fc004f88 por la versión.
 // - index.html (navegación): primero la red; sin red, la copia guardada (la app abre sin conexión).
 // - app.js / app.css / iconos / manifest (el armazón, con ?v=versión): de la caché; se guardan al instalar.
 // - data/*.json: stale-while-revalidate (responde con la copia y la actualiza en segundo plano).
 // - Nada de otros orígenes (API del intermediario, imágenes del juego): pasa directo, sin guardarse aquí
 //   (las imágenes quedan en la caché normal del navegador).
-const VERSION = "cfbce0d174";
-const SHELL = `sfl-shell-${VERSION}`;
-const DATA = "sfl-data-v1";
+const VERSION = "36fc004f88";
+// Prefijo de las cachés: "sfl" (web) o "sfl-beta" (beta en /app-beta/, mismo origen: no se pisan).
+const PREFIX = "sfl";
+const SHELL = `${PREFIX}-shell-${VERSION}`;
+const DATA = `${PREFIX}-data-v1`;
 const SHELL_FILES = [
   "./", `app.js?v=${VERSION}`, `app.css?v=${VERSION}`, "manifest.webmanifest",
   "icon-192.png", "icon-512.png", "apple-touch-icon.png",
@@ -23,7 +25,7 @@ self.addEventListener("install", (event) => {
 self.addEventListener("activate", (event) => {
   event.waitUntil(
     caches.keys()
-      .then((keys) => Promise.all(keys.filter((k) => k.startsWith("sfl-shell-") && k !== SHELL).map((k) => caches.delete(k))))
+      .then((keys) => Promise.all(keys.filter((k) => k.startsWith(`${PREFIX}-shell-`) && k !== SHELL).map((k) => caches.delete(k))))
       .then(() => self.clients.claim()),
   );
 });
