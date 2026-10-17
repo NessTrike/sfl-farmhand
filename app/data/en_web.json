@@ -72,5 +72,15 @@
   "La suscripción trimestral puede incluir una prueba gratis de 7 días para quienes no la hayan usado antes (una por persona, email o tarjeta). Durante la prueba tienes acceso completo a %@. Si no cancelas al menos 24 horas antes de que termine, la prueba se convierte automáticamente en una suscripción de pago y se cobra el primer periodo de 3 meses. Si cancelas durante la prueba, no se te cobra nada y mantienes el acceso hasta que termine. Si compras el plan de un solo pago durante la prueba, la parte no usada de la prueba se pierde.": "The quarterly subscription may include a 7-day free trial for those who haven't used it before (one per person, email or card). During the trial you have full access to %@. If you don't cancel at least 24 hours before it ends, the trial automatically becomes a paid subscription and the first 3-month period is charged. If you cancel during the trial, you aren't charged anything and keep access until it ends. If you buy the one-time payment plan during the trial, the unused part of the trial is forfeited.",
   "¡Ya tienes SFL Farmhand Pro!": "You now have SFL Farmhand Pro!",
   "No se pudo confirmar el pago. Si se cobró, usa «Ya tengo Pro: restaurar» con tu email y el número de recibo.": "Couldn't confirm the payment. If you were charged, use \"I already have Pro: restore\" with your email and receipt number.",
-  "No se pudo abrir el pago. Inténtalo de nuevo en unos segundos.": "Couldn't open the payment. Try again in a few seconds."
+  "No se pudo abrir el pago. Inténtalo de nuevo en unos segundos.": "Couldn't open the payment. Try again in a few seconds.",
+  "Arrastra las tarjetas para colocarlas a tu gusto": "Drag the cards to place them wherever you like",
+  "Ocultas": "Hidden",
+  "Arrastra aquí una tarjeta para ocultarla": "Drag a card here to hide it",
+  "Mostrar": "Show",
+  "Ocultar": "Hide",
+  "Mover": "Move",
+  "Mover %@: usa las flechas": "Move %@: use the arrow keys",
+  "Suelta aquí": "Drop here",
+  "Columna %@, posición %@": "Column %@, position %@",
+  "¿Volver a la colocación original?": "Go back to the original layout?"
 }
